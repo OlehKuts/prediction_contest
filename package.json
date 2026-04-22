@@ -2,6 +2,7 @@
   "name": "prediction_contest",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://OlehKuts.github.io./prediction_contest",
   "dependencies": {
     "@dicebear/collection": "^9.4.2",
     "@dicebear/core": "^9.4.2",
@@ -29,7 +30,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -50,6 +53,7 @@
     ]
   },
   "devDependencies": {
-    "@ag-media/react-pdf-table": "^2.0.3"
+    "@ag-media/react-pdf-table": "^2.0.3",
+    "gh-pages": "^6.3.0"
   }
 }
