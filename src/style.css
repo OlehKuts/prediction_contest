@@ -1,0 +1,278 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+}
+.invokedAlert {
+  position: fixed !important;
+  top: 70px !important;
+  right: 30px !important;
+  z-index: 9999;
+}
+.active {
+  font-weight: bold;
+}
+hr {
+  color: dimgray;
+  width: 80%;
+  margin: 10px auto;
+}
+.appFooter {
+  position: fixed;
+  bottom: 0;
+}
+.addGameForm form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+}
+.groupTables {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 20px;
+}
+.group {
+  margin: 10px;
+}
+.tournamentBracket,
+.gameList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.accordItemHome {
+  width: 200px;
+  margin: 5px 50px 5px 60px;
+  /* border: 1px solid black; */
+}
+.accordItemAway {
+  width: 200px;
+  margin: 5px 50px 5px 120px;
+}
+.finalScoreDiv {
+  width: 100px;
+  margin-left: 80px;
+  text-align: center;
+}
+.accHeader {
+  display: flex;
+  justify-content: center;
+}
+
+.trashAcc {
+  margin-right: 50px;
+}
+.accBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+}
+.setScoreLine,
+.visibilityBtnsLine {
+  display: flex;
+  justify-content: space-around;
+  column-gap: 10px;
+}
+.setScoreLine input {
+  width: 60px;
+}
+.setScoreLine label {
+  margin-top: 5px;
+}
+.personAdd {
+  margin-bottom: 3px;
+}
+.navbarIcons {
+  margin: 3px 4px 7px 4px;
+}
+.settingsNavbarIcon {
+  margin: 12px 0px 0px 8px;
+}
+.playersTables {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.playerModalTitle {
+  text-align: center;
+  margin: 0 auto;
+}
+.playerModalBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 5px;
+}
+.playerModal {
+  width: 500px;
+}
+.playerModalChooseContent,
+.passwordLine,
+.additionalParamsLine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+}
+.playerModalChooseContent button {
+  width: 200px;
+}
+.rules {
+  width: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.settings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.settings label {
+  font-weight: 620;
+}
+.settings div {
+  width: 1000px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+#depositLine {
+  display: flex;
+  flex-direction: row;
+}
+.currentPlayerCard {
+  min-width: 250px !important;
+  position: fixed !important;
+  top: 146px !important;
+  right: 50px !important;
+  z-index: 999;
+}
+.currentPlayerSpan {
+  font-size: 16px;
+}
+.playersSelect {
+  height: 36px;
+  margin: 0px 4px 0px 4px;
+}
+.changePlayerBtn {
+  margin-bottom: 5px;
+}
+.visibilityBtnsLine button {
+  font-size: 14px !important;
+}
+.currentJackpot {
+  color: palevioletred;
+  margin: 10px auto auto 10px;
+}
+.totalBalance {
+  color: white;
+  margin: 10px auto auto 10px;
+}
+.allGamePredictions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.filtersLine button {
+  margin: 5px;
+}
+.bgSky {
+  background-color: rgba(13, 202, 240, 0.2) !important;
+}
+.progressList {
+  width: 500px;
+  border: 1px solid lightgray;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.ratingName {
+  margin: 0 auto;
+}
+.progressItem {
+  display: grid;
+  grid-template-columns: 1fr 2fr 7fr 10fr;
+  column-gap: 10px;
+}
+.ratingsContainer {
+  display: flex;
+  flex-direction: row;
+}
+.addPlayer {
+  position: fixed !important;
+  top: 88px !important;
+  right: 20px !important;
+  z-index: 1000;
+}
+.addMatch {
+  position: fixed !important;
+  top: 80px !important;
+  right: 120px !important;
+  z-index: 1000;
+}
+.participantsTable,
+.groupTable,
+.leaderCard,
+.currentPlayerCard {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.leaderItemLine {
+  display: grid;
+  grid-template-columns: 2fr 6fr 2fr;
+  column-gap: 5px;
+}
+.leadersInfo {
+  min-width: 250px !important;
+  position: fixed !important;
+  top: 86px !important;
+  left: 20px !important;
+  z-index: 999;
+}
+.leaderCard {
+  margin-bottom: 15px;
+}
+.playoffSectionContainer {
+  width: 1200px;
+  display: flex;
+  flex-direction: column;
+  margin: 10px auto;
+  padding-left: 100px;
+}
+.playoffSectionGames {
+  margin: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 50px;
+}
+.smallerFont {
+  font-size: 12px;
+}
+.finalStage {
+  width: 1000px;
+  margin: 10px auto;
+  align-items: center;
+}
+.finalStage .playoffSectionGames {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.teamLine {
+  cursor: pointer;
+}
+.backupCard {
+  width: 24rem;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
