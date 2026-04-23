@@ -28,13 +28,13 @@ import { initPlayer } from "initialData/basicData";
 
 export const App = () => {
   const dispatch = useDispatch();
+  const allPlayers = selectAllPlayers(store.getState());
   const [currentPlayer, setCurrentPlayer] = useLocalStorage(
     "contest_cur_player",
     initPlayer,
   );
   const onChangePlayer = (newPlayer) => {
     setCurrentPlayer(newPlayer);
-    return;
   };
   const updateCurrentPlayer = (sum) => {
     setCurrentPlayer((prev) => ({ ...prev, balance: prev.balance - sum }));
@@ -88,10 +88,11 @@ export const App = () => {
   }, [observedPlayers]);
   useEffect(() => {
     setCurrentPlayer((previous) => {
-      const updatedPlayer = selectAllPlayers(store.getState()).find(
-        (item) => item.id === previous.id,
-      );
-      return updatedPlayer;
+      const updatedPlayer = allPlayers.find((item) => item.id === previous.id);
+      if (!allPlayers.length) {
+        return initPlayer;
+      }
+      return updatedPlayer ? updatedPlayer : allPlayers[0];
     });
   }, [observedPlayers]);
   return (

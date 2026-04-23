@@ -24,6 +24,7 @@ import { playerItemVisibilities } from "initialData/basicData";
 import {
   applyPredict,
   evaluatePrediction,
+  getPlayersFromStorage,
   selectAllPlayers,
   selectPlayerById,
 } from "store/playerSlice";
@@ -32,6 +33,7 @@ import { definePlayer } from "utils/definePlayer";
 import { store } from "store/store";
 import { definePlayerUpdates } from "utils/definePlayerUpdates";
 import { defineTableScoreParams } from "utils/defineTableScoreParams";
+import { getPlayersWithoutScore } from "utils/getPlayersWithoutScore";
 
 export const GameItem = ({
   game,
@@ -46,7 +48,6 @@ export const GameItem = ({
     homeTeamName,
     awayTeamName,
     finalScore,
-    additionalScore,
     gameNumber,
     stage,
     homeTeamId,
@@ -71,6 +72,7 @@ export const GameItem = ({
     selectPlayerById(state, currentPlayerId),
   );
   const allPlayers = selectAllPlayers(store.getState());
+  const scorelessPlayers = getPlayersWithoutScore(allPlayers, predictions);
   const dispatch = useDispatch();
 
   const homeSelected = useSelector((state) =>
@@ -269,7 +271,13 @@ export const GameItem = ({
             <>
               <div>
                 <div className="allGamePredictions">
-                  <h6>
+                  <h6
+                    title={`${
+                      scorelessPlayers.length
+                        ? `Не зробили прогноз: ${scorelessPlayers.join(",")}`
+                        : ""
+                    }`}
+                  >
                     Прогнози ({predictions.length}/{allPlayers.length})
                   </h6>
                   <h6>

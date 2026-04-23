@@ -2,12 +2,7 @@ import { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import { AddGameForm } from "components/games/AddGameForm";
 import { GameItem } from "components/games/GameItem";
-import {
-  filterGameSelector,
-  selectAllGames,
-  selectUncompletedGames,
-} from "store/gameSlice";
-import { store } from "store/store";
+import { filterGameSelector } from "store/gameSlice";
 import Accordion from "react-bootstrap/Accordion";
 import { CurrentPlayerCard } from "components/games/CurrentPlayerCard";
 import { useDispatch } from "react-redux";
@@ -78,6 +73,7 @@ export const GameList = ({
           show={show}
           handleClose={handleClose}
           displayAlert={displayAlert}
+          currentPlayer={currentPlayer}
         />
         {filteredGames.length ? (
           <Accordion defaultkey={"0"} style={{ width: "90%" }}>

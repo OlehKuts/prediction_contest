@@ -16,7 +16,7 @@ import {
 } from "react-bootstrap-icons";
 import { NavDropdown } from "react-bootstrap";
 import { useSelector } from "react-redux";
-import { selectCurrentJackpot, selectNearestGamePot } from "store/gameSlice";
+import { selectNearestGamePot } from "store/gameSlice";
 import { selectTotalBalance } from "store/playerSlice";
 
 export const AppNavbar = ({ contestName }) => {

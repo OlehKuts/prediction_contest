@@ -11,7 +11,12 @@ import { selectSimplifiedTeams } from "store/teamSlice";
 import { getNumbersArray } from "utils/utils";
 import { separateAvailableNumbers } from "utils/separateAvailableNumbers";
 
-export const AddGameForm = ({ show, handleClose, displayAlert }) => {
+export const AddGameForm = ({
+  show,
+  handleClose,
+  displayAlert,
+  currentPlayer,
+}) => {
   const takenGameNumbers = useSelector(selectGameNumbers);
   const simplifiedTeams = useSelector(selectSimplifiedTeams);
   const gameNumberList = getNumbersArray(1, 104);
@@ -47,6 +52,7 @@ export const AddGameForm = ({ show, handleClose, displayAlert }) => {
                   .min(1, "Оберіть валідний номер матчу!"),
               })}
               onSubmit={(values, { resetForm }) => {
+                if (currentPlayer.id === 1) return;
                 const gameId = nanoid();
                 const newGame = {
                   ...values,
