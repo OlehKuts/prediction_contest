@@ -30,7 +30,7 @@ export const App = () => {
   const dispatch = useDispatch();
   const allPlayers = selectAllPlayers(store.getState());
   const [currentPlayer, setCurrentPlayer] = useLocalStorage(
-    "contest_cur_player",
+    "contest_current_player",
     initPlayer,
   );
   const onChangePlayer = (newPlayer) => {
