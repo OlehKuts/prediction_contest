@@ -6,7 +6,7 @@ import {
   DatabaseFillCheck,
 } from "react-bootstrap-icons";
 import Modal from "react-bootstrap/Modal";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import Alert from "react-bootstrap/Alert";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -24,7 +24,6 @@ import { playerItemVisibilities } from "initialData/basicData";
 import {
   applyPredict,
   evaluatePrediction,
-  getPlayersFromStorage,
   selectAllPlayers,
   selectPlayerById,
 } from "store/playerSlice";

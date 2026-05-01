@@ -22,6 +22,7 @@ import { selectTotalBalance } from "store/playerSlice";
 export const AppNavbar = ({ contestName }) => {
   const nearestJackpot = useSelector(selectNearestGamePot);
   const totalBalance = useSelector(selectTotalBalance);
+  console.log(nearestJackpot);
   return (
     <>
       <Navbar
@@ -75,7 +76,9 @@ export const AppNavbar = ({ contestName }) => {
                 style={{ marginBottom: "5px", cursor: "pointer" }}
                 title="Джекпот найближчого матчу"
               />
-              <span className="currentJackpot">{nearestJackpot} грн</span>
+              <span className="currentJackpot">
+                {nearestJackpot ? nearestJackpot : 0} грн
+              </span>
             </Navbar.Text>
             <Navbar.Text style={{ marginLeft: "40px" }}>
               <WalletFill

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useLocalStorage } from "./hooks/useLocalStorage";
 import { useDispatch, useSelector } from "react-redux";
 import { AppNavbar } from "./components/AppNavbar";
@@ -30,7 +30,7 @@ export const App = () => {
   const dispatch = useDispatch();
   const allPlayers = selectAllPlayers(store.getState());
   const [currentPlayer, setCurrentPlayer] = useLocalStorage(
-    "contest_current_player",
+    "contest_cur_player",
     initPlayer,
   );
   const onChangePlayer = (newPlayer) => {

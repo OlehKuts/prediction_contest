@@ -1,6 +1,5 @@
 import {
   createSlice,
-  createAsyncThunk,
   createEntityAdapter,
   createSelector,
 } from "@reduxjs/toolkit";
@@ -25,7 +24,7 @@ const teamSlice = createSlice({
       teamAdapter.setAll(state, payload);
     },
     setInitialTeams: (state, { payload }) => {
-      teamAdapter.setAll(state, payload); // only by the development mode
+      teamAdapter.setAll(state, payload); // only for the development mode
     },
     changeIsQualified: (state, { payload }) => {
       teamAdapter.updateOne(state, payload);
