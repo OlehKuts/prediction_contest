@@ -26,7 +26,7 @@ A web application designed to automate charity prediction contests during major 
 
 ### 📸 Application Interface
 
-![Tournament Grid](./assets/tournamentGroupTable.png)
+![Tournament Grid](./assets/tournamentGroupTables.png)
 ![Games and LeaderBoards](./assets/gamesAndLeaderBoards.png)
 _Tournament results visualization and automatic group updates._
 
