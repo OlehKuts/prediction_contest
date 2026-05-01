@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# 🏆 Football Prediction Contest App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A web application designed to automate charity prediction contests during major football tournaments. This project replaces manual tracking with a transparent, automated system where every correct prediction contributes to charity goals.
 
-## Available Scripts
+**🔗 [Live Demo (GitHub Pages)](https://olehkuts.github.io/prediction_contest/)**
 
-In the project directory, you can run:
+---
 
-### `npm start`
+### 🚀 Key Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Dynamic Tournament Grid:** Automatic calculation of standings in groups and play-off brackets.
+- **Jackpot System:** Cumulative prize pool model. If no one guesses the exact score of a match, the fund rolls over to the next game.
+- **Leaderboards:** Two main categories — most accurate predictions and highest total winnings.
+- **Flexible Settings:** Capability to edit contest rules, titles, and entry fees for different tournament stages.
+- **Persistent Data:** Full synchronization with `LocalStorage` ensures all player and match data is saved even after a page refresh.
+- **PDF Generation:** Export backup data`.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 🛠 Tech Stack
 
-### `npm test`
+- **Frontend:** React (v18), React Router v7.
+- **State Management:** Redux Toolkit.
+- **UI Components:** React Bootstrap, Bootstrap Icons.
+- **Forms & Validation:** Formik + Yup.
+- **Graphics:** Dicebear API (avatars), Flag Icons (national team flags).
+- **Data Persistence:** Custom implementation of Redux state persistence in `LocalStorage`.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 📸 Application Interface
 
-### `npm run build`
+![Tournament Grid](./assets/tournamentGroupTable.png)
+![Games and LeaderBoards](./assets/gamesAndLeaderBoards.png)
+_Tournament results visualization and automatic group updates._
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 🏗 Data Architecture (Redux Toolkit)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The application state is organized into logical modules using the following slices:
 
-### `npm run eject`
+- **`playerSlice`**: Manages player profiles, deposits, and individual statistics.
+- **`gameSlice`**: Handles match results, prediction logs, and jackpot distribution logic.
+- **`teamSlice`**: Manages national team data and their tournament progression.
+- **`filterSlice`**: Global state for filtering matches by status and schedule.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### ⚙️ Installation & Setup
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Clone the repository:
+   ```bash
+   git clone https://github.com
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Run the project in development mode:
+   ```bash
+   npm start
+   ```
