@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Valentine } from "react-bootstrap-icons";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
 import { tournamentStages } from "initialData/basicData";

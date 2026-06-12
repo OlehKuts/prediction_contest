@@ -351,6 +351,38 @@ export const GameItem = ({
                           </>
                         ) : null}
                       </tr>
+
+                      <tr>
+                        {dividedPredicitions[2].length ? (
+                          <>
+                            {dividedPredicitions[2].map((item) => (
+                              <td key={item.playerId}>
+                                {
+                                  definePlayer(allPlayers, item.playerId)
+                                    .playerName
+                                }
+                              </td>
+                            ))}{" "}
+                          </>
+                        ) : null}
+                      </tr>
+                      <tr>
+                        {dividedPredicitions[2].length ? (
+                          <>
+                            {dividedPredicitions[2].map((item) => (
+                              <td key={item.playerId}>
+                                {item.predictionScore}{" "}
+                                {item.predictionScore === finalScore ? (
+                                  <AwardFill
+                                    color="goldenRod"
+                                    style={{ margin: "0px 5px 2px 0px" }}
+                                  />
+                                ) : null}
+                              </td>
+                            ))}{" "}
+                          </>
+                        ) : null}
+                      </tr>
                     </tbody>
                   </Table>
                   <div>

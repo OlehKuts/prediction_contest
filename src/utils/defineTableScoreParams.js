@@ -1,15 +1,31 @@
-const divider = (arr) => {
-  const maxCount = Math.ceil(arr.length / 2);
-  const doubleArray = arr.reduce(
-    (acc, current) => {
-      return acc[0].length < maxCount
-        ? [[...acc[0], current], acc[1]]
-        : [acc[0], [...acc[1], current]];
-    },
-    [[], []],
-  );
-  return doubleArray;
+// const divider = (arr) => {
+//   const maxCount = Math.ceil(arr.length / 2);
+//   const doubleArray = arr.reduce(
+//     (acc, current) => {
+//       return acc[0].length < maxCount
+//         ? [[...acc[0], current], acc[1]]
+//         : [acc[0], [...acc[1], current]];
+//     },
+//     [[], []],
+//   );
+//   return doubleArray;
+// };
+
+const chunkIntoThree = (arr) => {
+  const result = [];
+  const totalLength = arr.length;
+  const baseSize = Math.floor(totalLength / 3);
+  let remainder = totalLength % 3;
+  let currentIndex = 0;
+  for (let i = 0; i < 3; i++) {
+    const currentSize = baseSize + (remainder > 0 ? 1 : 0);
+    remainder--;
+    result.push(arr.slice(currentIndex, currentIndex + currentSize));
+    currentIndex += currentSize;
+  }
+  return result;
 };
+
 const getSortedPredictions = (predictions) => {
   const splittedPredictions = predictions.map((item) => {
     const newItem = {
@@ -33,6 +49,6 @@ export const defineTableScoreParams = (rawPredictions) => {
   const predictions = getSortedPredictions(rawPredictions);
   const maxCount = Math.ceil(predictions.length / 2);
   const tableFontSize = maxCount < 7 ? "14px" : maxCount < 9 ? "12px" : "10px";
-  const dividedPredicitions = divider(predictions);
+  const dividedPredicitions = chunkIntoThree(predictions);
   return { tableFontSize, dividedPredicitions };
 };
