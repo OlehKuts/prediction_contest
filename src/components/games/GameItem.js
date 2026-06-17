@@ -1,3 +1,4 @@
+import React from "react";
 import Accordion from "react-bootstrap/Accordion";
 import Button from "react-bootstrap/Button";
 import {
@@ -289,7 +290,7 @@ export const GameItem = ({
                     style={{ fontSize: tableFontSize }}
                   >
                     <tbody>
-                      <tr>
+                      {/* <tr>
                         {dividedPredicitions[0].length ? (
                           <>
                             {dividedPredicitions[0].map((item) => (
@@ -382,7 +383,37 @@ export const GameItem = ({
                             ))}{" "}
                           </>
                         ) : null}
-                      </tr>
+                      </tr> */}
+                      {dividedPredicitions
+                        .filter((subArray) => subArray.length > 0)
+                        .map((subArray, index) => (
+                          <React.Fragment key={index}>
+                            <tr>
+                              {subArray.map((item) => (
+                                <td key={item.playerId}>
+                                  {
+                                    definePlayer(allPlayers, item.playerId)
+                                      .playerName
+                                  }
+                                </td>
+                              ))}
+                            </tr>
+
+                            <tr>
+                              {subArray.map((item) => (
+                                <td key={item.playerId}>
+                                  {item.predictionScore}{" "}
+                                  {item.predictionScore === finalScore && (
+                                    <AwardFill
+                                      color="goldenRod"
+                                      style={{ margin: "0px 5px 2px 0px" }}
+                                    />
+                                  )}
+                                </td>
+                              ))}
+                            </tr>
+                          </React.Fragment>
+                        ))}
                     </tbody>
                   </Table>
                   <div>
