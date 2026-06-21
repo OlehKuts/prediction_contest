@@ -15,6 +15,7 @@ export const PlayerItem = ({ player, rank }) => {
   const [adminPassword, setAdminPassword] = useState("");
   const [showChanges, setShowChanges] = useState(false);
   const [newPlayerName, setNewPlayerName] = useState(playerName);
+  const [newAvatarName, setNewAvatarName] = useState(avatarName);
   const [newDeposit, setNewDeposit] = useState(0);
   const [newBalance, setNewBalance] = useState(balance);
 
@@ -46,6 +47,7 @@ export const PlayerItem = ({ player, rank }) => {
         changes: {
           deposit: deposit + newDeposit,
           playerName: newPlayerName,
+          avatarName: newAvatarName,
           balance: balance === newBalance ? balance + newDeposit : newBalance,
         },
       }),
@@ -76,7 +78,7 @@ export const PlayerItem = ({ player, rank }) => {
         </Modal.Header>
         <Modal.Body>
           <div className="playerModalBody" style={{ marginBottom: "5px" }}>
-            <Avatar seed={avatarName} />
+            <Avatar seed={newAvatarName} />
           </div>
           <div className="playerModalBody">
             {!mainBlock ? (
@@ -194,6 +196,15 @@ export const PlayerItem = ({ player, rank }) => {
                         type="text"
                         value={newPlayerName}
                         onChange={(e) => setNewPlayerName(e.target.value)}
+                      />
+                    </div>
+                    <div className="additionalParamsLine">
+                      <label htmlFor="avatarName">Назва аватара</label>
+                      <input
+                        name="avatarName"
+                        type="text"
+                        value={newAvatarName}
+                        onChange={(e) => setNewAvatarName(e.target.value)}
                       />
                     </div>
                     <div className="additionalParamsLine">
